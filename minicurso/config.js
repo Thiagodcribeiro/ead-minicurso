@@ -2,5 +2,5 @@
 window.COURSE_CONFIG = {
   author: 'Thiago Diniz Cruz Ribeiro',
   institution: 'UFRPE',
-  youtubeId: '',
+  youtubeId: 'https://youtu.be/o7uSnWO_ZOc',
 };
