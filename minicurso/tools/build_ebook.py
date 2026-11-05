@@ -35,7 +35,7 @@ def para(text,x,y,w,size=12,color=INK,bold=False,leading=None):
 def page_start(number,label,anchor):
     c.setFillColor(HexColor(PAPER));c.rect(0,0,W,H,fill=1,stroke=0)
     c.bookmarkPage(anchor);c.addOutlineEntry(label,anchor,0,False)
-    para('LABORATÓRIO DE RACIOCÍNIO  /  2ª VA',42,768,516,9,MUTED)
+    para('LABORATÓRIO DE RACIOCÍNIO',42,768,516,9,MUTED)
     c.setStrokeColor(HexColor('#dce3da'));c.line(42,740,558,740)
     para('Além da resposta certa',42,33,300,9,MUTED)
     para(str(number).zfill(2),525,33,33,9,MUTED)
@@ -101,7 +101,7 @@ c.save()
 
 def esc(s):return html.escape(s,quote=True)
 parts=['<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(data['title'])+' | eBook</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="media.css"></head><body><a class="skip" href="#livro">Pular para o livro</a><header class="topbar"><a class="brand" href="index.html">&lt;/&gt; laboratório de raciocínio</a><a href="index.html#midias">Voltar ao minicurso</a></header><main class="media-main" id="livro">']
-parts.append(f'<div class="book-cover"><p class="eyebrow">EBOOK · MATERIAL COMPLEMENTAR · 2ª VA</p><h1>{esc(data["title"])}</h1><p class="lead">{esc(data["subtitle"])}</p><p>{esc(author)}{(" · "+esc(institution)) if institution else ""}</p><a href="media/ebook-raciocinio.pdf" download>Baixar a edição em PDF (12 páginas)</a></div>')
+parts.append(f'<div class="book-cover"><p class="eyebrow">EBOOK · MATERIAL COMPLEMENTAR</p><h1>{esc(data["title"])}</h1><p class="lead">{esc(data["subtitle"])}</p><p>{esc(author)}{(" · "+esc(institution)) if institution else ""}</p><a href="media/ebook-raciocinio.pdf" download>Baixar a edição em PDF (12 páginas)</a></div>')
 parts.append('<section id="sumario"><h2>Seu percurso de leitura</h2><p>Reserve 15–20 minutos. Navegue pelos capítulos e abra os comentários das pausas de reflexão. Esta versão HTML oferece texto ajustável e leitura sem efeitos de virada de página.</p><ol class="book-toc">')
 for ch in data['chapters']:parts.append(f'<li><a href="#{ch["id"]}">{esc(ch["title"])}</a></li>')
 parts.append('</ol></section>')
