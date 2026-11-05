@@ -1,3 +1,10 @@
+export function publicationUrl(value) {
+  try {
+    const url = new URL(String(value || '').trim());
+    const allowed = ['fliphtml5.com', 'online.fliphtml5.com', 'view.genially.com'];
+    return url.protocol === 'https:' && allowed.includes(url.hostname) && !url.username && !url.password && url.pathname !== '/' ? url.href : null;
+  } catch { return null; }
+}
 export function youtubeId(value) {
   const raw = String(value || '').trim();
   if (!raw) return '';

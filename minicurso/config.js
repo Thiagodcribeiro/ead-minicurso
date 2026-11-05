@@ -2,5 +2,7 @@
 window.COURSE_CONFIG = {
   author: 'Thiago Diniz Cruz Ribeiro',
   institution: 'UFRPE',
-  youtubeId: 'https://youtu.be/o7uSnWO_ZOc',
+  youtubeId: 'o7uSnWO_ZOc',
+  // Cole o link público do eBook após publicar no FlipHTML5 ou Genially.
+  ebookUrl: '',
 };

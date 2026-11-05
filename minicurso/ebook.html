@@ -1,0 +1,105 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Da resposta ao raciocínio | eBook</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="media.css"></head><body><a class="skip" href="#livro">Pular para o livro</a><header class="topbar"><a class="brand" href="index.html">&lt;/&gt; laboratório de raciocínio</a><a href="index.html#midias">Voltar ao minicurso</a></header><main class="media-main" id="livro">
+<div class="book-cover"><p class="eyebrow">EBOOK · MATERIAL COMPLEMENTAR · 2ª VA</p><h1>Da resposta ao raciocínio</h1><p class="lead">Um guia de criação de atividades de Computação com análise crítica de IA</p><p>Thiago Diniz Cruz Ribeiro · UFRPE</p><a href="media/ebook-raciocinio.pdf" download>Baixar a edição em PDF (12 páginas)</a></div>
+<section id="sumario"><h2>Seu percurso de leitura</h2><p>Reserve 15–20 minutos. Navegue pelos capítulos e abra os comentários das pausas de reflexão. Esta versão HTML oferece texto ajustável e leitura sem efeitos de virada de página.</p><ol class="book-toc">
+<li><a href="#pergunta">A pergunta desenha o pensamento</a></li>
+<li><a href="#cenario">Dê ao problema uma tensão real</a></li>
+<li><a href="#comparar">Compare com a mesma régua</a></li>
+<li><a href="#evidencia">Faça a justificativa aparecer</a></li>
+<li><a href="#ia">Transforme a IA em objeto de análise</a></li>
+<li><a href="#perguntas">Escreva perguntas que pedem relações</a></li>
+<li><a href="#rubrica">Dê critérios antes de dar uma nota</a></li>
+<li><a href="#transferencia">Leve o método para outro problema</a></li>
+<li><a href="#modelo">Um molde para a sua próxima atividade</a></li>
+<li><a href="#referencias">Fontes e caminhos de continuidade</a></li>
+</ol></section>
+<section class="book-chapter" id="pergunta"><p class="eyebrow">01 / INTENÇÃO PEDAGÓGICA</p><h2>A pergunta desenha o pensamento</h2><p class="lead">Uma resposta correta pode esconder um caminho frágil. Uma boa atividade pede que o estudante torne esse caminho visível.</p>
+<h3>O ponto de partida</h3><p>Na 1ª VA, você comparou algoritmos de ordenação. Agora, o foco é planejar a atividade que permite observar essa comparação. Não basta trocar uma pergunta curta por uma longa: é preciso definir qual ação do estudante será evidência de aprendizagem.</p>
+<h3>Três ações observáveis</h3><p>Comparar: examinar alternativas pelos mesmos critérios. Aplicar: usar um conceito para interpretar uma restrição concreta. Justificar: conectar decisão, evidência e consequência. Essas ações podem aparecer em uma tabela comentada, um teste ou um pequeno argumento.</p>
+<h3>Antes e depois</h3><p>Antes: ‘Qual é a complexidade do Merge Sort?’. Depois: ‘Escolha entre três algoritmos para ordenar inscrições com empates. Compare tempo e memória, explique como preservar a chegada e mostre um teste que sustentaria sua escolha’. A segunda formulação depende de conceitos, mas também exige usá-los.</p>
+<div class="book-visual">
+<ol class="book-flow"><li>Comparar</li><li>Aplicar</li><li>Justificar</li></ol>
+</div>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Que produto do estudante permitiria distinguir uma escolha fundamentada de um palpite?</p><details><summary>Abrir comentário</summary><p>Uma justificativa que ligue requisitos a propriedades do algoritmo, compare ao menos uma alternativa e inclua evidência verificável. Apenas nomear o algoritmo não revela o raciocínio.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="cenario"><p class="eyebrow">02 / CENÁRIO E CRITÉRIOS</p><h2>Dê ao problema uma tensão real</h2><p class="lead">Uma decisão só tem sentido quando sabemos o que pode ser negociado e o que precisa ser atendido.</p>
+<h3>Cenário-base</h3><p>Uma universidade ordena 100 mil inscrições por nota decrescente. Os dados já estão na ordem de chegada. Empates devem preservar essa ordem. Há memória para um vetor auxiliar e exige-se tempo O(n log n) no pior caso.</p>
+<h3>Obrigatório ou desejável?</h3><p>Estabilidade e limite de pior caso são obrigatórios. Economia adicional de memória é desejável, mas o vetor auxiliar cabe. Separar esses papéis evita escolher uma alternativa que parece rápida e viola uma regra do problema.</p>
+<h3>Não esconda premissas</h3><p>Diga que estamos comparando versões clássicas sobre vetores. Informe a ordem inicial, o tamanho dos dados e a disponibilidade de memória. Sem essas condições, duas decisões diferentes podem ser igualmente defensáveis.</p>
+<div class="book-visual">
+<ol class="book-flow"><li>Cenário</li><li>Alternativas</li><li>Critérios</li><li>Decisão</li><li>Justificativa</li></ol>
+</div>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>O que acontece se a atividade disser apenas ‘escolha o algoritmo mais rápido’?</p><details><summary>Abrir comentário</summary><p>Faltam distribuição dos dados, ambiente, implementação e restrições. ‘Mais rápido’ precisa de um critério: crescimento assintótico não é o mesmo que tempo medido em segundos.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="comparar"><p class="eyebrow">03 / ALTERNATIVAS</p><h2>Compare com a mesma régua</h2><p class="lead">Uma comparação justa usa os mesmos critérios para todas as opções e identifica a versão analisada.</p>
+<h3>Quick Sort usual</h3><p>Tem tempo médio O(n log n), pior caso O(n²) e não é estável. Com particionamento in-place, ainda usa memória de pilha: O(log n) em média e O(n) no pior caso na recursão usual. Técnicas específicas podem limitar essa pilha.</p>
+<h3>Merge Sort em vetor</h3><p>Garante O(n log n) no pior caso e usa O(n) de memória auxiliar. É estável quando, no empate, a intercalação escolhe primeiro o elemento da metade esquerda. No cenário-base, esses custos são compatíveis com as exigências.</p>
+<h3>Insertion Sort</h3><p>Tem pior caso O(n²), memória auxiliar O(1) e pode ser estável se não inverter chaves iguais. No melhor caso, é O(n). É plausível para entradas pequenas ou com poucas inversões, mas isso não muda seu pior caso.</p>
+<div class="book-visual">
+<table><caption>Comparação das versões clássicas</caption><thead><tr><th scope="col">Versão clássica</th><th scope="col">Pior caso</th><th scope="col">Estável</th></tr></thead><tbody>
+<tr><th scope="row">Quick Sort</th><td>O(n²)</td><td>Não</td></tr>
+<tr><th scope="row">Merge Sort</th><td>O(n log n)</td><td>Sim*</td></tr>
+<tr><th scope="row">Insertion Sort</th><td>O(n²)</td><td>Sim*</td></tr>
+</tbody></table>
+</div>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Por que ‘quase ordenado’ não é uma garantia de tempo para qualquer algoritmo?</p><details><summary>Abrir comentário</summary><p>O efeito depende da implementação e do grau de desordem. O estudante deve explicar essas condições, em vez de transformar uma tendência em regra universal. *A estabilidade depende dos cuidados descritos acima.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="evidencia"><p class="eyebrow">04 / EVIDÊNCIA</p><h2>Faça a justificativa aparecer</h2><p class="lead">Um exemplo pequeno permite inspecionar uma propriedade que uma frase abstrata pode esconder.</p>
+<h3>Observe os empates</h3><p>Na entrada em ordem de chegada: Ana (8), Caio (9), Bia (8), Davi (7). Por nota decrescente, a saída esperada é Caio (9), Ana (8), Bia (8), Davi (7). Ana continua antes de Bia, embora ambas tenham nota 8.</p>
+<h3>Da escolha ao argumento</h3><p>‘Escolho Merge Sort porque sua estabilidade preserva a chegada e o pior caso atende ao limite. Aceito o vetor O(n), permitido pelo cenário. Quick Sort usual falha nas garantias e Insertion Sort falha no limite de pior caso.’ Cada conclusão aponta para um requisito.</p>
+<h3>O limite do teste</h3><p>Um teste com empates verifica um comportamento naquela entrada; não prova a estabilidade de todas as execuções. Combine exemplos com análise da implementação. Para desempenho, uma medição também não prova uma complexidade assintótica.</p>
+<div class="book-visual">
+<ol class="book-flow"><li>Caio · 9</li><li>Ana · 8</li><li>Bia · 8</li><li>Davi · 7</li></ol>
+</div>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Qual teste adicional ajuda a revelar um problema no desempate?</p><details><summary>Abrir comentário</summary><p>Use muitos registros com a mesma nota e identificadores de chegada crescentes. Verifique se a ordem dos identificadores foi preservada. Explique também por que a regra de intercalação mantém essa ordem.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="ia"><p class="eyebrow">05 / LEITURA CRÍTICA</p><h2>Transforme a IA em objeto de análise</h2><p class="lead">A fluência de uma resposta não substitui a verificação de suas afirmações.</p>
+<h3>Prompt reproduzível</h3><p>‘Compare Quick Sort, Merge Sort e Insertion Sort para 100 mil inscrições. Preserve chegada nos empates, considere memória para um vetor auxiliar e exija O(n log n) no pior caso. Justifique a decisão e explique quando mudaria de escolha.’</p>
+<h3>Resposta A: erro deliberado</h3><p>‘Quick Sort é sempre O(n log n), não usa memória extra e preserva empates.’ São três alegações a investigar. A versão usual admite pior caso quadrático, usa pilha e não é estável. Peça que o estudante localize e corrija cada alegação.</p>
+<h3>Resposta B: argumento mais consistente</h3><p>‘Merge Sort atende à estabilidade e ao pior caso; o vetor auxiliar cabe. Quick Sort usual não garante os requisitos e Insertion Sort tem pior caso quadrático.’ A resposta melhora ao adicionar um exemplo de desempate e condições de mudança.</p>
+<h3>Transparência de origem</h3><p>A e B são exemplos produzidos com IA para este material; A contém erros intencionais. Não representam experimentos independentes com modelos externos. Em consultas próprias, registre ferramenta, data, prompt, resposta e revisão humana.</p>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Como sair de ‘concordo com a IA’ para uma análise verificável?</p><details><summary>Abrir comentário</summary><p>Separe afirmação, evidência e correção: ‘A resposta diz X; a propriedade ou o contraexemplo Y contradiz X; sob o requisito Z, concluo W’. Consulte as referências e verifique a implementação.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="perguntas"><p class="eyebrow">06 / MEDIAÇÃO</p><h2>Escreva perguntas que pedem relações</h2><p class="lead">A qualidade da pergunta aparece no tipo de raciocínio que ela torna necessário.</p>
+<h3>Comparação</h3><p>Pergunte: ‘Compare as três alternativas por tempo, memória e estabilidade. Qual restrição elimina cada opção?’. O produto esperado é uma tabela comentada, não uma lista de definições desconectadas.</p>
+<h3>Aplicação</h3><p>Pergunte: ‘Mostre a ordem esperada para quatro inscrições, incluindo um empate, e explique a regra que preserva a chegada’. O produto esperado conecta uma propriedade abstrata a um caso concreto.</p>
+<h3>Justificativa e revisão</h3><p>Pergunte: ‘Defenda sua escolha e identifique uma alteração de cenário que mudaria sua conclusão’. O produto esperado explicita condições de validade. Para 20 registros quase ordenados, sem limite assintótico obrigatório, Insertion Sort passa a ser plausível.</p>
+<h3>Evite induzir a resposta</h3><p>‘Explique por que Merge Sort é o melhor’ já entrega a decisão. Prefira fornecer critérios e pedir uma escolha. Se todas as alternativas falharem, aceitar ‘nenhuma atende’ com justificativa pode ser a resposta mais rigorosa.</p>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Como usar uma pergunta curta sem reduzir a exigência cognitiva?</p><details><summary>Abrir comentário</summary><p>Dê um cenário claro e peça uma relação específica: ‘Qual requisito sua escolha sacrifica?’. A extensão da pergunta não determina a profundidade do raciocínio.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="rubrica"><p class="eyebrow">07 / AVALIAÇÃO DO RACIOCÍNIO</p><h2>Dê critérios antes de dar uma nota</h2><p class="lead">A rubrica deve tornar visível o que conta como evidência e como uma resposta pode melhorar.</p>
+<h3>Cinco critérios, dez pontos</h3><p>Use cinco dimensões: leitura do cenário; aplicação de conceitos; comparação; justificativa com evidência; revisão crítica da IA. Em cada uma: 0 = não evidenciado ou incorreto; 1 = parcial; 2 = consistente. Adapte os descritores ao produto solicitado.</p>
+<h3>Um descritor observável</h3><p>Na comparação, 0: apenas nomeia uma solução; 1: compara duas de forma incompleta; 2: compara as três pelos mesmos critérios e explica limites. Evite descritores vagos, como ‘excelente’, sem dizer o que foi observado.</p>
+<h3>Feedback que leva a uma ação</h3><p>‘Você relacionou estabilidade ao cenário. Agora explique por que o pior caso elimina Insertion Sort e mostre dois registros empatados na ordem esperada.’ Esse feedback reconhece uma evidência e indica uma revisão concreta.</p>
+<h3>Não automatize o que não verificou</h3><p>A contagem de palavras ou a presença do nome do algoritmo não comprova entendimento. O quiz é formativo; a atividade aberta pede leitura humana com a rubrica. Uma alternativa diferente exige condições explícitas, não penalização automática.</p>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Um aluno escolhe o algoritmo esperado, mas não justifica. Deve receber nota máxima?</p><details><summary>Abrir comentário</summary><p>Não há evidência suficiente para isso. Avalie cada critério separadamente e peça os vínculos que faltam. A rubrica completa do minicurso oferece os descritores específicos de 0, 1 e 2.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="transferencia"><p class="eyebrow">08 / TRANSFERÊNCIA</p><h2>Leve o método para outro problema</h2><p class="lead">A aprendizagem se amplia quando o estudante reconhece a mesma estrutura de decisão em outro conteúdo.</p>
+<h3>Novo cenário: busca em um catálogo</h3><p>Um catálogo está ordenado por código e recebe muitas consultas exatas, com poucas atualizações. Compare busca linear, busca binária e tabela hash. Declare se você pode criar uma estrutura auxiliar antes de decidir.</p>
+<h3>Critérios que mudam a decisão</h3><p>Busca linear tem pior caso O(n) e não exige ordenação. Busca binária em vetor ordenado tem pior caso O(log n), mas exige manter a ordenação. Tabelas hash usuais podem ter busca esperada O(1) sob hipóteses de dispersão e carga; colisões podem levar a O(n) no pior caso e há custo de espaço.</p>
+<h3>Não apague a preparação</h3><p>Comparar apenas o tempo de uma consulta ignora construção e atualização do índice. Peça que o estudante considere quantidade de consultas, custo de preparação e memória. Consultas por intervalo também podem favorecer estruturas ordenadas.</p>
+<h3>Volte ao tema do minicurso</h3><p>A atividade continua sendo comparar alternativas, aplicar conceitos e justificar decisões. O algoritmo muda; o raciocínio sobre requisitos, custos e evidências permanece.</p>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Qual informação faltante você pediria antes de escolher uma tabela hash?</p><details><summary>Abrir comentário</summary><p>Por exemplo: memória disponível, frequência de atualizações, necessidade de busca por intervalo e exigência de pior caso. Não presuma que o tempo esperado O(1) vale sem hipóteses.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="modelo"><p class="eyebrow">09 / PLANEJAMENTO</p><h2>Um molde para a sua próxima atividade</h2><p class="lead">Use este roteiro para construir uma proposta que outra pessoa consiga aplicar e avaliar.</p>
+<h3>1. Situação e produto</h3><p>Defina quem precisa resolver o problema, quais dados recebe e quais restrições deve cumprir. Peça um produto: tabela comparativa, decisão justificada e um teste ou contraexemplo.</p>
+<h3>2. Alternativas e intervenção da IA</h3><p>Escolha três alternativas plausíveis. Inclua duas respostas de IA com origem identificada, ou exemplos didáticos explicitamente sinalizados. Não esconda erros: faça deles material para análise fundamentada.</p>
+<h3>3. Perguntas e rubrica</h3><p>Escreva uma pergunta de comparação, uma de aplicação e uma de justificativa com mudança de cenário. Relacione cada pergunta a um critério e a uma evidência observável.</p>
+<h3>4. Revisão antes de usar</h3><p>Resolva você mesmo a proposta. Verifique se há dados suficientes, se as alternativas realmente diferem e se a rubrica permite feedback específico. Confira links, contraste, leitura no celular e instruções de entrega.</p>
+<div class="book-visual">
+<ol class="book-flow"><li>Objetivo</li><li>Pergunta</li><li>Evidência</li><li>Critério</li></ol>
+</div>
+<div class="book-reflection"><strong>Pausa para refletir</strong><p>Como o mapa interativo complementa este guia?</p><details><summary>Abrir comentário</summary><p>Ele permite variar restrições e observar as consequências para as três ordenações. Use-o para explorar condições de validade; depois escreva sua própria atividade no minicurso. Não há nota nem tentativa certa no mapa.</p></details></div>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section class="book-chapter" id="referencias"><p class="eyebrow">10 / REFERÊNCIAS E CRÉDITOS</p><h2>Fontes e caminhos de continuidade</h2><p class="lead">Confronte afirmações técnicas com implementações e fontes; use o material como ponto de partida para sua autoria.</p>
+<h3>Ordenação</h3><p>Sedgewick, R.; Wayne, K. Algorithms, 4th edition. Addison-Wesley, 2011. Material de apoio da Princeton University: Elementary Sorts, Mergesort, Quicksort e a tabela de comparação de algoritmos.</p>
+<h3>Busca</h3><p>O mesmo material de apoio apresenta Binary Search e Hash Tables. O exemplo do catálogo é uma extensão didática: explicite as hipóteses de cada estrutura antes de comparar seus custos.</p>
+<h3>Planejamento pedagógico</h3><p>Anderson, L. W.; Krathwohl, D. R. (org.). A Taxonomy for Learning, Teaching, and Assessing. Longman, 2001. Referência para distinguir recordar, aplicar, analisar e avaliar. O método em cinco etapas e os exemplos são propostas didáticas deste minicurso.</p>
+<h3>Créditos e uso</h3><p>Material complementar da 2ª VA, elaborado com apoio de IA. Os exemplos com nomes são fictícios. Faça revisão humana antes do uso docente. Esta edição complementa o vídeo, o caso de ordenação, a rubrica e o quiz da 1ª VA.</p>
+<p><a href="https://algs4.cs.princeton.edu/cheatsheet/">Tabela de algoritmos ↗</a></p>
+<p><a href="https://algs4.cs.princeton.edu/22mergesort/">Mergesort ↗</a></p>
+<p><a href="https://algs4.cs.princeton.edu/23quicksort/">Quicksort ↗</a></p>
+<p><a href="https://algs4.cs.princeton.edu/11model/BinarySearch.java.html">Busca binária ↗</a></p>
+<p><a href="https://algs4.cs.princeton.edu/34hash/">Tabelas hash ↗</a></p>
+<p><a href="https://ead-minicurso.vercel.app/">Voltar ao minicurso ↗</a></p>
+<p class="book-back"><a href="#sumario">↑ Voltar ao sumário</a></p></section>
+<section><h2>Veja as relações em movimento</h2><p>Agora mude as restrições no mapa interativo e observe as consequências para os algoritmos.</p><a class="button primary" href="mapa.html">Explorar o mapa de decisões →</a></section></main></body></html>

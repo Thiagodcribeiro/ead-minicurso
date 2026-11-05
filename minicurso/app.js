@@ -1,4 +1,4 @@
-import { questions, quizResult, youtubeId } from './course.mjs';
+import { questions, quizResult, youtubeId, publicationUrl } from './course.mjs';
 const $ = id => document.getElementById(id);
 const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
 const save = (key, value) => { try { localStorage.setItem(key, value); return true; } catch { return false; } };
@@ -25,6 +25,12 @@ function applyConfig() {
   } else container.append(emptyVideo.cloneNode(true));
 }
 applyConfig();
+const publishedBook = publicationUrl(window.COURSE_CONFIG?.ebookUrl);
+if (publishedBook) {
+  $('ebook-platform-link').href = publishedBook;
+  $('ebook-platform-link').hidden = false;
+  $('ebook-publication-note').hidden = true;
+}
 $('settings-form').addEventListener('submit', event => {
   event.preventDefault();
   const id = youtubeId($('youtube-input').value);

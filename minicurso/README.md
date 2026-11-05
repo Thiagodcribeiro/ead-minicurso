@@ -1,5 +1,7 @@
 # Além da resposta certa — minicurso EaD
 
+**Atualização para a 2ª VA (05/11/2026):** eBook de 12 páginas, versão HTML acessível e mapa interativo adicionados. Veja `ENTREGA-2VA.md` para o checklist e a publicação obrigatória do eBook no FlipHTML5/Genially. Os arquivos estão prontos; a atualização do site público e a publicação externa do eBook ainda precisam ser concluídas.
+
 Site completo em português, com conteúdo didático, quiz formativo e proposta final aberta. Implementado em HTML, CSS e JavaScript nativos, sem dependências: não exige Next.js, instalação de pacotes ou etapa de compilação. A escolha mantém o projeto simples para editar, executar e publicar na Vercel.
 
 ## Executar localmente
@@ -27,7 +29,7 @@ Um link `https://www.youtube.com/watch?v=abcdefghijk` tem ID `abcdefghijk` (exem
 
 A seção **Espaço do autor** permite editar nome, instituição e vídeo diretamente no site. Essas alterações são preferências locais, salvas somente no navegador atual; não alteram os arquivos publicados. Preferências locais têm prioridade sobre `config.js`. Para verificar os valores publicados sem preferências antigas, use uma janela privada ou reaplique os valores na seção do autor.
 
-O vídeo ainda precisa ser gravado pelo autor. Há um roteiro de 25 minutos em `ROTEIRO-VIDEO.md` e um guia textual no site. Publique o vídeo no YouTube como público ou não listado, permita incorporação, revise legendas em português e confira a reprodução. O guia escrito não é uma transcrição da gravação; se a gravação tiver conteúdo adicional, acrescente a transcrição revisada ao site.
+O vídeo informado pelo autor já está configurado: `o7uSnWO_ZOc`. Há um roteiro proposto de 25 minutos em `ROTEIRO-VIDEO.md` e um guia textual no site. Confira a permissão de incorporação e as legendas no YouTube. O guia escrito não é uma transcrição da gravação; se a gravação tiver conteúdo adicional, acrescente a transcrição revisada ao site.
 
 ## Publicar na Vercel
 
@@ -78,4 +80,4 @@ Verificação realizada na entrega: cinco testes automatizados passaram; a sinta
 
 O pedido menciona `/mnt/data/Projeto_2026_2.docx.pdf`, mas esse arquivo **não estava disponível no ambiente**. A conversa referenciada também não pôde ser recuperada pela ferramenta. Este projeto segue os requisitos escritos na solicitação e o trecho fornecido, incluindo a proposta de vídeo de 20–30 minutos; **não foi possível conferir a conformidade com o PDF da 1ª VA**.
 
-Antes de entregar: conferir o PDF original, preencher identificação, gravar e configurar o vídeo, revisar legendas e publicar. O site e as atividades escritas estão implementados; o vídeo e a confirmação do enunciado original continuam pendentes.
+Na atualização de 05/11/2026, o arquivo `Projeto_2026_2 (2VA).pdf` foi fornecido e lido integralmente. Autoria e instituição foram recuperadas da configuração pública do site; o vídeo informado foi preservado. A ausência do PDF da 1ª VA acima é um registro histórico, não se aplica ao novo enunciado. As pendências atuais e a correspondência com a rubrica da 2ª VA estão em `ENTREGA-2VA.md`.
